@@ -1,0 +1,34 @@
+<div class="container wrapper">
+  <div class="row">
+    <!-- Issue table -->
+    <div class="col-md-12">
+      <div class="inner">
+        <button type="button" class="btn btn-success btn-sm move-right"
+          [routerLink]="['/add-equipo']">Crear</button>
+        <h3>Mis equipos</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Equipo</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let equipos of EquiposList.equipos">
+              <th scope="row">{{equipos.id}}</th>
+              <td>{{equipos.equipo}}</td>
+              <td>{{equipos.estado}}</td>
+              <td>
+                <button type="button" class="btn btn-success btn-sm move-right"
+                  [routerLink]="['/edit-equipo/', equipos.id]">Edit</button>
+                <button type="button" class="btn btn-danger btn-sm" (click)="deleteEquipo(equipos)">Remove</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
