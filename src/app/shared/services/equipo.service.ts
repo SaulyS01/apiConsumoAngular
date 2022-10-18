@@ -9,8 +9,11 @@ import { retry, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class EquipoService {
-  // Base url
+  // Laravel
   baseurl = 'http://localhost:8000/api';
+  
+  // Nodejs
+  //baseurl = 'http://localhost:4040/api';
 
   constructor(private http: HttpClient) { }
 

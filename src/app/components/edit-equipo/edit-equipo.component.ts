@@ -29,6 +29,8 @@ export class EditEquipoComponent implements OnInit {
     this.equipoService.GetEquipo(id).subscribe((data) => {
 
       this.equipoU = data.equipo
+      console.log(data.equipo);
+      
 
       this.updateEquipoForm = this.fb.group({
         equipo: [this.equipoU.equipo],
